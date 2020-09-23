@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 
-   // 一般用于声明全局变量
+   // var 变量组，一般用于声明全局变量
    var (
       vname1 int
       vname2 string
