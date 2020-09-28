@@ -4,16 +4,16 @@ import "unsafe"
 
 // const 常量组,定义常量组时如果不提供初始值，将使用上行的表达式。
 const (
-    a = 1
-    b
-    c
+	a = 1
+	b
+	c
 )
 
 // 常量表达式中，函数必须是内置函数
 const (
 	a1 = "abc"
-    b1 = len(a1)
-    c1 = unsafe.Sizeof(a1)
+	b1 = len(a1)
+	c1 = unsafe.Sizeof(a1)
 )
 
 func main() {
@@ -22,7 +22,7 @@ func main() {
 
 	// 单个常量赋值
 	const LENGTH int = 10
-	const WIDTH int = 5  
+	const WIDTH int = 5
 	var area int
 	area = LENGTH * WIDTH
 	println(area)
@@ -47,15 +47,15 @@ func main() {
 
 	// 同一个 const 常量组内递增，每当有新的 const 关键字时，iota 计数会重新开始。
 	const (
-		j1 = iota   //0
-		j2          //1
-		j3          //2
-		j4 = "ha"   //"ha"   iota += 1
-		j5          //"ha"   iota += 1
-		j6 = 100    //100    iota += 1
-		j7          //100    iota += 1
-		j8 = iota   //7		恢复计数
-		j9          //8
+		j1 = iota //0
+		j2        //1
+		j3        //2
+		j4 = "ha" //"ha"   iota += 1
+		j5        //"ha"   iota += 1
+		j6 = 100  //100    iota += 1
+		j7        //100    iota += 1
+		j8 = iota //7		恢复计数
+		j9        //8
 	)
 	println(j1, j2, j3, j4, j5, j6, j7, j8, j9)
 }
