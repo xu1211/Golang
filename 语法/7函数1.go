@@ -11,7 +11,6 @@ func main() {
 	*/
 	// 声明函数变量
 	getSquareRoot := func(x float64) float64 {
-		// 平方根
 		return math.Sqrt(x)
 	}
 	// 使用函数
