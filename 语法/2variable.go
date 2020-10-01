@@ -9,7 +9,12 @@ var (
 )
 
 func main() {
-	// 变量声明，默认零值
+	/*
+		变量声明，默认零值
+		- 数值类型（包括complex64/128）为 0
+		- bool 零值为 false
+		- 字符串为 ""（空字符串）
+	*/
 	var i int
 	var f float64
 	var b bool
