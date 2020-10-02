@@ -56,4 +56,9 @@ struct Slice
 };
 ```
 - [数组作为参数](./10arrayToFunc.go)
-- []](.go)
+
+- [结构体1](./11.1struct.go)
+
+- [结构体2](./11.2struct.go)
+
+
