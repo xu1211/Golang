@@ -21,12 +21,6 @@ type Books struct {
 	book_id int
 }
 
-// 将结构体对象转换为 JSON 时，对象中的属性首字母必须是大写，才能正常转换为 JSON。
-type Person struct {
-	　　　Name string　　　　　　//Name字段首字母大写
-	　　　age int               //age字段首字母小写
-	}
-	
 func main() {
 
 	// 创建一个新的结构体
@@ -50,11 +44,11 @@ func main() {
 	fmt.Printf("Book 1 subject : %s\n", Book1.subject)
 	fmt.Printf("Book 1 book_id : %d\n", Book1.book_id)
 
-	// 结构体作为函数参数
+	// 结构体 作为函数参数
 	println()
 	printBook1(Book1)
 
-	// 结构体指针
+	// 结构体指针 作为函数参数
 	println()
 	printBook2(&Book1)
 }

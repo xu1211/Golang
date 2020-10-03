@@ -2,6 +2,8 @@ package main
 
 import "unsafe"
 
+// 常量不能使用 := 语法定义。
+
 // const 常量组,定义常量组时如果不提供初始值，将使用上行的表达式。
 const (
 	a = 1

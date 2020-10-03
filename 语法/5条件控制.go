@@ -1,16 +1,24 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
-	/*
-	  if
-	*/
-	var a int = 10
+	var a float64 = 10
+	var b float64 = 3
+
+	// if语句
 	if a < 20 {
 		fmt.Printf("a 小于 20\n")
 	} else {
 		fmt.Printf("a 不小于 20\n")
+	}
+
+	// if语句 可以在条件之前执行一个简单语句
+	if v := math.Mod(a, b); v < 10 {
+		fmt.Printf("余数为：%v\n", v)
 	}
 
 	/*
