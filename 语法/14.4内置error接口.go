@@ -18,6 +18,7 @@ type MyError struct {
 	What string
 }
 
+// 实现接口方法 error.Error()
 func (e *MyError) Error() string {
 	return fmt.Sprintf("at \n 时间：%v,\n 事件：%s", e.When, e.What)
 }

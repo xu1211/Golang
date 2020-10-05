@@ -85,3 +85,10 @@ type 接口类型名 interface{
 }
 ```
 - [隐式接口](./14.2隐式接口.go)
+
+- [Stringer接口](./14.3内置Stringer接口.go)
+- [error接口](./14.4内置error接口.go)
+- [Readers接口](./14.5内置Readers接口.go)
+- [http接口](./14.6内置http.go)
+- [http接口](./14.7内置http2.go)
+- [image接口](./14.8内置image.go)

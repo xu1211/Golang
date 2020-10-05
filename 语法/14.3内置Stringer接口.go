@@ -12,6 +12,7 @@ type Stringer struct {
 
 type IPAddr [4]byte
 
+// 实现接口方法 Stringer.String()
 func (ip IPAddr) String() string {
 	return fmt.Sprintf("改造后的IPAddr类型 String()： %v.%v.%v.%v\n", ip[0], ip[1], ip[2], ip[3])
 }
@@ -21,6 +22,7 @@ type Person struct {
 	Age  int
 }
 
+// 实现接口方法 Stringer.String()
 func (p Person) String() string {
 	return fmt.Sprintf("改造后的Person类型 String()： %v (%v years)\n", p.Name, p.Age)
 }
