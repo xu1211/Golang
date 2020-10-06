@@ -49,6 +49,9 @@ func main() {
 	slice9 := slice7[1:]
 	printSlice(slice9)
 
+	slice10 := slice7[:1]
+	printSlice(slice10)
+
 	println("切片append()：")
 	slice1 = append(slice1, 1)
 	printSlice(slice1)
