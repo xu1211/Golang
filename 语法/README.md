@@ -5,23 +5,28 @@
 
 
 
-- [helloword](./1hello.go)
+- [HelloWord](./hello.go)
 
 >行分隔符:
 在 Go 程序中，一行代表一个语句结束，一行想写多个语句则必须使用 `;` 区分
 
 >go 不支持隐式转换类型
-- [常量](./2variable.go)
 
-- [变量](./3constant.go)
+- [基本数据类型](./1data_type.go)
+
+- [变量 var](./2variable.go)
+
+- [常量 const](./3constant.go)
 
 - [指针](./4指针.go)
 
-- [条件控制：](./5条件控制.go)
+- [分支](./5条件控制.go)
 if...else语句, switch 语句,select 语句
 
-- [循环：](./6循环.go)
+- [循环](./6循环.go)
 for语句, goto语句, defer语句
+- [Range迭代](./13Range.go)
+结合for使用，遍历数组集合
 
 - [函数：](./7.0函数.go)
 函数定义,调用,2种传值方式,多值返回,命名返回值
@@ -40,38 +45,38 @@ for语句, goto语句, defer语句
 - [函数回调：](./7.4回调.go)
 - [函数递归：](./7.5递归.go)
 
-
 - [作用域](./8作用域.go)
 
-- [数组](./9.1Array.go)
-长度固定不可改变
-- [slice切片(动态数组)](./9.2Slice.go)
-长度不固定
+- 容器
+    - [数组 [len]type](./9.1Array.go)\
+        长度固定，类型固定
+    - [slice切片(动态数组)](./9.2Slice.go)\
+        长度不固定，类型固定；
+        相对于数组slice 使用的更多
     - 切片拥有**长度**和**容量**。
         - 长度是它所包含的元素个数。
         - 容量是从它的第一个元素开始数，到其底层数组元素末尾的个数。
-```go
-//slice 的底层是数组指针,数据结构如下
-struct Slice
-{   
-    byte*    array;       // 实际数据
-    uintgo    len;        // 长度
-    uintgo    cap;        // 容量
+        ```go
+        //slice 的底层是数组指针,数据结构如下
+        struct Slice
+        {   
+            byte*    array;       // 实际数据
+            uintgo    len;        // 长度
+            uintgo    cap;        // 容量
+        
+        };
+        ```
+    - [数组作为参数](./10arrayToFunc.go)
+    
+    - [结构体1](./11.1struct.go)
+    结构体定义，赋值，访问，传参
+    
+    - [结构体2](./11.2struct.go)
+    结构体对象转换为JSON
+    
+    - [map](./12map.go)
 
-};
-```
-- [数组作为参数](./10arrayToFunc.go)
 
-- [结构体1](./11.1struct.go)
-结构体定义，赋值，访问，传参
-
-- [结构体2](./11.2struct.go)
-结构体对象转换为JSON
-
-- [map](./12map.go)
-
-- [范围Range](./13Range.go)
-结合for使用，遍历数组集合
 
 - [接口](./14.1接口.go)
 go里面没有类和继承的概念。

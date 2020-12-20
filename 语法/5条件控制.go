@@ -18,7 +18,9 @@ func main() {
 
 	// if语句 可以在条件之前执行一个简单语句
 	if v := math.Mod(a, b); v < 10 {
-		fmt.Printf("余数为：%v\n", v)
+		fmt.Printf("余数<10：%v\n", v)
+	}else if v > 10{
+	    fmt.Printf("余数>10：%v\n", v)
 	}
 
 	/*

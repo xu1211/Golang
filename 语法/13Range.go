@@ -16,15 +16,15 @@ func main() {
 	}
 	println()
 
-	// 2.Range 循环array键值对
-	println("Range 循环array键值对:")
+	// 2.Range 遍历 array键值对
+	println("Range 遍历 array键值对:")
 	for i, num := range nums {
 		fmt.Printf("array键：%d, 值：%d\n", i, num)
 	}
 	println()
 
-	// range求和
-	println("range 求和:")
+	// range 提供数组每个项的索引和值。不需要索引时用 空值定义符_ 来忽略它
+	println("range 空值定义符_:")
 	sum := 0
 	// 空白符"_"省略元素的键
 	for _, num := range nums {
@@ -34,7 +34,7 @@ func main() {
 	println()
 
 	// range 循环map键值。
-	println("Range 循环map键值对:")
+	println("Range 遍历 map键值对:")
 	kvs := map[string]string{"a": "apple", "b": "banana"}
 	for k, v := range kvs {
 		fmt.Printf("map键：%s, 值：%s\n", k, v)
@@ -42,7 +42,7 @@ func main() {
 	println()
 
 	// range 循环枚举Unicode字符串
-	println("Range 循环枚举键值对:")
+	println("Range 遍历 枚举键值对:")
 	for k, v := range "go" {
 		fmt.Printf("枚举键：%d, 值：%d\n", k, v)
 	}

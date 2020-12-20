@@ -1,7 +1,7 @@
 # Golang
  Golang实践
 
-- [基础语法](./语法)
+- [基础语法](./语法/README.md)
 
 - [Stringer接口](./语法/14.3内置Stringer接口.go)
 - [error接口](./语法/14.4内置error接口.go)

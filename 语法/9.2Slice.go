@@ -19,7 +19,7 @@ func main() {
 			copy() 函数：拷贝切片
 
 	*/
-	println("切片定义：")
+	fmt.Println("切片定义：")
 	var slice1 []int
 	printSlice(slice1)
 

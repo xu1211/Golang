@@ -12,4 +12,13 @@ func main() {
 	fmt.Println("Hello, World!")
 }
 
-//go run ./hello.go
+/*
+    直接运行程序
+    go run ./hello.go
+
+    编译成二进制文件
+    go build ./hello.go
+
+    运行二进制文件
+    hello.exe
+*/

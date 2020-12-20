@@ -11,7 +11,7 @@ const (
 	c
 )
 
-// 常量表达式中，函数必须是内置函数
+// 常量表达式中使用函数，必须是内置函数
 const (
 	a1 = "abc"
 	b1 = len(a1)
@@ -19,19 +19,21 @@ const (
 )
 
 func main() {
-	println(a, b, c)
-	println(a1, b1, c1)
+	println("全局常量：", a, b, c)
+	println("全局常量：", a1, b1, c1)
 
 	// 单个常量赋值
 	const LENGTH int = 10
 	const WIDTH int = 5
+	println("常量：", LENGTH, WIDTH)
+
 	var area int
 	area = LENGTH * WIDTH
-	println(area)
+	println("LENGTH * WIDTH = ", area)
 
 	// 多重赋值
 	const d, e, f = 1, false, "str"
-	println(d, e, f)
+	println("多常量定义+赋值", d, e, f)
 
 	// 显式类型定义
 	const s1 string = "abc"
@@ -45,7 +47,7 @@ func main() {
 		i2
 		i3
 	)
-	println(i1, i2, i3)
+	println("特殊常量iota：", i1, i2, i3)
 
 	// 同一个 const 常量组内递增，每当有新的 const 关键字时，iota 计数会重新开始。
 	const (
@@ -59,5 +61,5 @@ func main() {
 		j8 = iota //7		恢复计数
 		j9        //8
 	)
-	println(j1, j2, j3, j4, j5, j6, j7, j8, j9)
+	println("特殊常量iota：", j1, j2, j3, j4, j5, j6, j7, j8, j9)
 }
