@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	// 未定义长度的数组只能传给不限制数组长度的函数
+	// 未定义长度的数组-slice，只能传给slice
 	var array = []int{1, 2, 3, 4, 5}
 	setArray(array)
 

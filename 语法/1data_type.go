@@ -14,15 +14,13 @@ import "fmt"
 派生类型：
     指针类型（Pointer）
     数组类型（Array）
+    切片类型（Slice）
+    Map类型（Map）
     结构类型（Struct）
     管道类型（Channel）
     函数类型（Function）
-    切片类型（Slice）
     接口类型（Interface）
-    Map类型（Map）
 */
-
-//，整形，，
 func main() {
 
     fmt.Println("go" + "lang")
