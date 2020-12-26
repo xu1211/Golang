@@ -12,6 +12,7 @@ func main() {
 	}
 }
 
+// 阶乘
 func Factorial(n uint64) (result uint64) {
 	if n > 0 {
 		result = n * Factorial(n-1)
@@ -20,6 +21,7 @@ func Factorial(n uint64) (result uint64) {
 	return 1
 }
 
+// 斐波那契数列
 func fibonacci(n int) int {
 	if n < 2 {
 		return n

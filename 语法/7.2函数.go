@@ -4,18 +4,18 @@ import "fmt"
 
 // 闭包： 定义在一个函数内部的函数，能够读取其他函数内部变量的函数
 
-// 闭包函数func() int，能够读取func getSequence()函数中 i 变量
 func getSequence() func() int {
 	i := 0
+	// 闭包函数func() int，能够读取func getSequence()函数中 i 变量
 	return func() int {
 		i += 1
 		return i
 	}
 }
 
-// 带参数的闭包函数，闭包函数为func(x3, x4 int) (int, int, int) 闭包函数声明中的返回值不用写具体的形参名称
 func add(x1, x2 int) func(int, int) (int, int, int) {
 	i := 0
+	// 带参数的闭包函数，闭包函数为func(x3, x4 int) (int, int, int) 闭包函数声明中的返回值不用写具体的形参名称
 	return func(x3, x4 int) (int, int, int) {
 		i += 1
 		return i, x1 + x2, x3 + x4
