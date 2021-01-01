@@ -75,13 +75,19 @@ func main() {
 	printSlice(slice10)
 
 	println()
-	println("切片slice1 append()：")
+	println("slice10 append()追加1个元素：")
 	slice10 = append(slice10, 2)
 	fmt.Print("slice10：")
 	printSlice(slice10)
 
-	fmt.Print("slice10：")
+	fmt.Print("slice10 append()追加多个元素：")
 	slice10 = append(slice10, 3, 4, 5, 6)
+	fmt.Print("slice10：")
+	printSlice(slice10)
+
+	println("slice10 append()追加切片：")
+	slice10 = append(slice10, []int{1,2,3}...)
+	fmt.Print("slice10：")
 	printSlice(slice10)
 
 	println()

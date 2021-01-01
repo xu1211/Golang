@@ -85,6 +85,7 @@ func isHave(m map[string]string, s string) (string, bool) {
 		flag=false 则不存在,elem是map的元素类型的零值
 	*/
 	elem, flag := m[s]
+	fmt.Println(flag)
 	if flag {
 		fmt.Println(s, "存在，值是", elem)
 	} else {

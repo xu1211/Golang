@@ -14,6 +14,7 @@ func main() {
             - 数值类型（包括complex64/128）为 0
             - bool 零值为 false
             - 字符串为 ""（空字符串）
+	引用类型的零值是nil
 	*/
 	var i int
 	var f float64
