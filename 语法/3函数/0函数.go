@@ -6,18 +6,23 @@ func main() {
 	var a int = 100
 	var b int = 200
 
-	// 函数调用
+// max 函数调用
 	fmt.Println("a,b最大值是 : ", max(a, b))
 
+// 函数传值方法：
+    // 1. 值传递
 	fmt.Println(swapInt(a, b))
 	fmt.Printf("值传递后a b值为 : %d %d\n", a, b)
 
+    // 2. 引用传递
 	swapIntRef(&a, &b)
 	fmt.Printf("引用传递后a b值为 : %d %d\n", a, b)
 
+    // 3. 可变参数
 	sumAll(a)
 	sumAll(a, b)
 
+// 命名返回值
 	fmt.Println(split(a))
 }
 
@@ -69,11 +74,13 @@ func sumAll(nums ...int) {
 
 /*
 命名返回值：
-  返回值可以被命名，并且像变量那样使用
+  返回值可以被命名，并且 在函数中 可以像变量那样使用
   没有参数的 return 语句返回结果的当前值
 */
 func split(sum int) (x, y int) {
 	x = sum * 4 / 9
 	y = sum - x
+    fmt.Println("命名返回值x：", x)
+    fmt.Println("命名返回值y：", y)
 	return
 }

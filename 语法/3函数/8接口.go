@@ -21,7 +21,7 @@ type MiPhone struct {
 	name string
 	price float32
 }
-// 实现call()方法，实现Phone接口
+// 实现call()方法，就实现了Phone接口
 func (miPhone MiPhone) call() {
 	fmt.Println("I am xiaomi, I can call you!")
 }

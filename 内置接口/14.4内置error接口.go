@@ -23,6 +23,7 @@ func (e *MyError) Error() string {
 	return fmt.Sprintf("at \n 时间：%v,\n 事件：%s", e.When, e.What)
 }
 
+// 该方法会返回一个error
 func run() error {
 	return &MyError{
 		time.Now(),

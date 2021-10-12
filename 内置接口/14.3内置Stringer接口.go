@@ -28,6 +28,8 @@ func (p Person) String() string {
 }
 
 func main() {
+    fmt.Println("string打印测试")
+
 	addrs := map[string]IPAddr{
 		"loopback":  {127, 0, 0, 1},
 		"googleDNS": {8, 8, 8, 8},

@@ -6,7 +6,7 @@ import (
 )
 /*
 Go 语言中同时有 函数 和 方法 。
-方法是一个作用于接受者receiver的函数，接受者可以是命名类型或者结构体类型的一个值或者是一个指针。
+方法是一个 作用于 接受者receiver的函数，接受者可以是命名类型或者结构体类型的一个值或者是一个指针。
 接受者receiver 的概念类似this，self
 
 函数: func function_name( [parameter list] ) [return_types] {函数体}
@@ -17,6 +17,7 @@ Go 自动处理方法调用时的值和指针之间的转化。
 	2. 方法接受器类型 为指针类型: 可以改变结构体的数据，避免在方法调用时产生一个拷贝，
 */
 
+// 接受者receiver
 // 定义结构体 Circle：圆
 type Circle struct {
 	// 半径

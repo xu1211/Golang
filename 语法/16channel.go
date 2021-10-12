@@ -13,7 +13,6 @@ import "fmt"
 
 func sum(a []int, c chan int) {
 	sum := 0
-	fmt.Println(a)
 	for _, v := range a {
 		sum += v
 	}
