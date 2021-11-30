@@ -1,5 +1,10 @@
 package main
-import "fmt"
+
+import (
+	"fmt"
+	"unsafe"
+)
+
 /*
 基本类型：
     布尔型   bool
@@ -23,14 +28,35 @@ import "fmt"
     接口类型（Interface）
 */
 func main() {
+	var i1 int = 1
+	var i2 int8 = 2
+	var i3 int16 = 3
+	var i4 int32 = 4
+	var i5 int64 = 5
+	fmt.Println("int: ", unsafe.Sizeof(i1))
+	fmt.Println("int: ", unsafe.Sizeof(i2))
+	fmt.Println("int: ", unsafe.Sizeof(i3))
+	fmt.Println("int: ", unsafe.Sizeof(i4))
+	fmt.Println("int: ", unsafe.Sizeof(i5))
 
-    fmt.Println("go" + "lang")
+	var ui1 uint = 1
+	var ui2 uint8 = 2
+	var ui3 uint16 = 3
+	var ui4 uint32 = 4
+	var ui5 uint64 = 5
+	fmt.Println("uint: ", unsafe.Sizeof(ui1))
+	fmt.Println("uint8: ", unsafe.Sizeof(ui2))
+	fmt.Println("uint16: ", unsafe.Sizeof(ui3))
+	fmt.Println("uint32: ", unsafe.Sizeof(ui4))
+	fmt.Println("uint64: ", unsafe.Sizeof(ui5))
 
-    fmt.Println("1+1 =", 1+1)
+	fmt.Println("go" + "lang")
 
-    fmt.Println("7.0/3.0 =", 7.0/3.0)
+	fmt.Println("1+1 =", 1+1)
 
-    fmt.Println(true && false)
-    fmt.Println(true || false)
-    fmt.Println(!true)
+	fmt.Println("7.0/3.0 =", 7.0/3.0)
+
+	fmt.Println(true && false)
+	fmt.Println(true || false)
+	fmt.Println(!true)
 }
