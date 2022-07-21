@@ -20,6 +20,10 @@ type Books struct {
 	book_id int
 }
 
+type bookshelf struct {
+	books *Books
+}
+
 func main() {
 	// 实例化 结构体
 	pythonbook1 := Books{
@@ -59,6 +63,16 @@ func main() {
 	cbook2.title = "C 语言 下"
 	fmt.Println("指针类型的结构体：", cbook2)
 	fmt.Println("指针类型的结构体：", *cbook2)
+
+	bookshelf := bookshelf{
+		books: &Books{
+			"python 入门",
+			"py",
+			"编程",
+			1,
+		},
+	}
+	fmt.Print(bookshelf)
 
 	// 结构体 作为函数参数
 	println()

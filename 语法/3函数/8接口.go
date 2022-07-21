@@ -14,6 +14,7 @@ Go语言中实现接口是隐式的：实现接口中的 所有方法 , 就实�
 */
 type Phone interface {
 	call()
+	sms()
 }
 
 // 定义结构体MiPhone

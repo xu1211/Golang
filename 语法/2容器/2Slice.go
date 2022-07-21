@@ -86,7 +86,7 @@ func main() {
 	printSlice(slice10)
 
 	println("slice10 append()追加切片：")
-	slice10 = append(slice10, []int{1,2,3}...)
+	slice10 = append(slice10, []int{1, 2, 3}...)
 	fmt.Print("slice10：")
 	printSlice(slice10)
 
@@ -95,8 +95,20 @@ func main() {
 	copy(slice9, slice10)
 	fmt.Print("slice9：")
 	printSlice(slice9)
+
+	println()
+	fmt.Printf("传参前地址 %p , %p \n", slice10, &slice10)
+	testSlice(slice10)
 }
 
 func printSlice(x []int) {
 	fmt.Printf("len=%d cap=%d slice=%v\n", len(x), cap(x), x)
+}
+
+// map作为函数的参数 值传递or引用传递 or 传指针
+// 看起来是传引用,但实际 传指针
+func testSlice(s []int) {
+	fmt.Printf("传参后地址 %p , %p \n", s, &s) // 形参的地址与实参相同（引用传递）
+	// 修改形参的值，会影响到实参
+
 }
