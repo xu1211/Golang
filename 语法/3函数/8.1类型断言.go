@@ -32,7 +32,6 @@ func main() {
 	// 测试1: interface{} 值为基础类型
 	var x interface{}
 	x = "string"
-	//x = 1
 
 	v, ok := x.(string)
 	if ok {
@@ -47,7 +46,13 @@ func main() {
 	} else {
 		fmt.Println("int 类型断言失败")
 	}
-
+	fmt.Println("--------------------------------")
+	justifyType(x)
+	x = 1
+	justifyType(x)
+	x = true
+	justifyType(x)
+	fmt.Println("--------------------------------")
 	// 测试2: interface{} 值为struct
 	alltype()
 }
@@ -63,5 +68,18 @@ func alltype() {
 	fmt.Println(a)
 	if v, ok := a.(*intStruct); ok {
 		fmt.Println(v.i)
+	}
+}
+
+func justifyType(x interface{}) {
+	switch v := x.(type) {
+	case string:
+		fmt.Printf("x is a string，value is %v\n", v)
+	case int:
+		fmt.Printf("x is a int is %v\n", v)
+	case bool:
+		fmt.Printf("x is a bool is %v\n", v)
+	default:
+		fmt.Println("unsupport type！")
 	}
 }
