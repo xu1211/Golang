@@ -25,4 +25,6 @@
     - [select案例-斐波那契数列](./语法/20channelSelectFibonacci.go)
 
 
+## 性能分析 pprof
+- [pprof-web页面](./pprof/http.go)
 
