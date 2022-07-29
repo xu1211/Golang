@@ -24,7 +24,29 @@
 - [通道channel-select语法](./语法/19channelSelect.go)
     - [select案例-斐波那契数列](./语法/20channelSelectFibonacci.go)
 
-
 ## 性能分析 pprof
 - [pprof-web页面](./pprof/http.go)
 
+
+## 测试
+测试用例文件名都为: `*_test.go`
+### 单元测试
+```bash
+# 执行unit_test.go文件的所有用例
+go test ./test/unit_test.go
+
+# -v，可以让测试时显示详细的流程
+go test -v  ./test/unit_test.go
+
+# -run [name\正则]，只执行符合名称的用例
+go test -v -run TestA ./test/unit_test.go
+```
+### 基准测试 benchmark
+```bash
+# -bench=[name\正则] 运行符合名称的基准测试用例
+go test -v -bench=. ./test/benchmark_test.go
+
+# -benchmem 参数以显示内存分配情况
+go test -v -bench=Alloc -benchmem benchmark_test.go
+
+```
