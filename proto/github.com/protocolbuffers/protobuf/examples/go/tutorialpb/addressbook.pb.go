@@ -15,7 +15,7 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
-// This is a compile-time assertion to ensure that this generated file
+// This is a compile-time assertion to ensure that this generated fileIO
 // is compatible with the proto package it is being compiled against.
 // A compilation error at this line likely means your copy of the
 // proto package needs to be updated.
@@ -168,7 +168,7 @@ func (m *Person_PhoneNumber) GetType() Person_PhoneType {
 	return Person_MOBILE
 }
 
-// Our address book file is just one of these.
+// Our address book fileIO is just one of these.
 type AddressBook struct {
 	People               []*Person `protobuf:"bytes,1,rep,name=people,proto3" json:"people,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
