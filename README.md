@@ -14,10 +14,21 @@
   - 异常 panic
 
 ### goroutine 并发处理
-- [并发](./语法/15并发.go)
->线程的内存占用，每个 Go 线程竟然只占用4KB。同一台机器，Java 线程最多只能建几千个，但是 Go 线程可以建数百万个。
-- [通道channel](./语法/16channel.go)
-  多线程通讯
+- [并发 `goroutine`](./语法/15并发.go)
+> go语言中使用 协程(goroutine) 实现并发; 它是由官方实现的超级"线程池"。 由runtime管理
+> 
+> 内存占用: 每个 goroutine只占用4KB。 而线程要8MB; 
+> 同一台机器 Java线程 最多只能建几千个，但是 Go协程 可以建数百万个。
+- 上下文 `context`
+  例: [用context停止子协程](./语法/context.go)
+> 实际是 goroutine 的上下文，包含 goroutine 的运行状态、环境、现场等信息。
+> 
+> 用来在 goroutine之间 传递上下文信息，包括：取消信号、超时时间、截止时间、k-v 等。
+
+context是内置接口. 详细见下文: 内置接口-context
+
+- [通道 `channel`](./语法/16channel.go)
+  goroutine之间通讯
 - [通道channel-缓存](./语法/17channel缓冲.go)
 - [通道channel-关闭](./语法/18channel关闭与遍历.go)
 - [通道channel-select语法](./语法/19channelSelect.go)
@@ -33,12 +44,16 @@
   http://localhost:8081/string \
   http://localhost:8081/struct
 - [image接口](./内置接口/14.8内置image.go)
+#### context
+对于一条函数调用链 必须传递上下文
+- 接口介绍, 创建context
+
 
 ## 内置包 package
 - os包 
   系统的基本操作，如文件操作、目录操作、执行命令、信号与中断、进程、系统状态
 - [runtime包]()
-cpu调度
+  运行时, cpu调度
 
 - [sync](./内置包/sync)
 
