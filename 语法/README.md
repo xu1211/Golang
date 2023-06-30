@@ -20,7 +20,7 @@
 var {identifier} {type}
 ```
 
-零值
+变量的默认零值
 - [常量 `const`](./3constant.go)
 ```go
 const {identifier} [{type}] = {value}
@@ -31,33 +31,37 @@ const {identifier} [{type}] = {value}
     多重赋值：无需中间变量，就能变量交换
 
 ## 逻辑控制
-- [分支](./5条件控制.go)\
+- [分支](./logical/5条件控制.go)\
 `if...else`语句, `switch` 语句,`select` 语句
 
-- [循环](./6循环.go)\
+- [循环](./logical/6循环.go)\
 `for`语句, `goto`语句
-    - [`Range` 迭代](./7Range.go)\
+    - [`Range` 迭代](./logical/7Range.go)\
     结合for使用，遍历数组集合
 
-## 数据容器
+## 数据结构
 - [指针](./4指针.go)
 
 - 容器：定义/实例化/赋值/访问/传参
-    - [数组 `[len]value_type`](./2容器/1Array.go)\
+    - [数组 `[len]value_type`](./dataStructure/1Array.go)\
         长度固定，类型固定
-    - [slice切片(动态数组) `[]value_type`](./2容器/2Slice.go)\
+    - [slice切片(动态数组) `[]value_type`](./dataStructure/2Slice.go)\
         长度不固定，类型固定；相对于数组 slice使用的更多，\
         append() \
         copy()
-    - [map `map[key_type]value_type`](./2容器/4map.go)\
+    - [map `map[key_type]value_type`](./dataStructure/4map.go)\
         无序的键值对的集合,其他的语言中称为 哈希 / 字典
-    - [结构体 `struct`](./2容器/3.1struct.go)\
+    - [结构体 `struct`](./dataStructure/3.1struct.go)\
         结构体，指针类型的结构体    
-        - [结构体对象转换为JSON](./2容器/3.2struct.go)
-- [new() 与 make()](./2容器/5newAndMake.go)
+        - [结构体对象转换为JSON](./dataStructure/3.2struct.go)
+- [new() 与 make()](./dataStructure/5newAndMake.go)
 
+  基本类型和复合类型的变量在创建时都会自动分配内存地址, 直接可用。
 
-## 函数,方法,接口
+  引用类型(指针等)不会给分配内存,需要用new
+
+  slice, map, channel不能用new, 要用make
+## 函数,方法 func
 - [`func`：函数](./3函数/0函数.go)\
     函数声明,调用，
     值传递/引用传递，
@@ -81,6 +85,7 @@ const {identifier} [{type}] = {value}
 
 - [变量作用域](./3函数/作用域.go)
 
+## 接口 interface
 - [接口 `interface`](./3函数/8接口.go)\
 go里面没有类和继承的概念。
 接口类型是由一组`方法定义的集合`。
@@ -88,5 +93,15 @@ go里面没有类和继承的概念。
     - [隐式实现接口](./3函数/9隐式接口.go)\
 Go语言中**实现接口是隐式的**：实现接口中的 所有方法 , 就实现了这个接口
 
+## [包 `package`](./package/)
+
+- package定义
+- package引用
+- 包的初始化 package init()
+
+
+
+## 宕机 panic,recover
 - [宕机 `panic`](./3函数/10程序宕机.go)
 - [宕机恢复 `recover`](./3函数/11宕机恢复.go)
+

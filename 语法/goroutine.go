@@ -27,7 +27,9 @@ LOOP:
 func main() {
 	ctx, cancel := context.WithCancel(context.Background())
 	wg.Add(1)
+
 	go worker(ctx)
+
 	time.Sleep(time.Second * 3)
 	cancel() // 通知子goroutine结束
 	wg.Wait()

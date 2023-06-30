@@ -7,6 +7,7 @@ import "fmt"
 
    &var_name			取地址,返回存储的内存地址
    *var_name			解引用,返回内存地址对应的值
+	指针的零值是nil
 */
 func main() {
 	var a int = 4
