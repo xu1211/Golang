@@ -1,0 +1,9 @@
+go.sum
+pack
+*.tgz
+.idea
+.codecc
+package
+*.log
+*.log.*
+vendor

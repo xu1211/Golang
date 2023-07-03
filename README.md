@@ -13,6 +13,8 @@
   - 包 package
   - 异常 panic
 
+### todo 反射reflect
+
 ### goroutine 并发处理
 - [并发 `goroutine`](./语法/15并发.go)
 > go语言中使用 协程(goroutine) 实现并发; 它是由官方实现的超级"线程池"。 由runtime管理
@@ -31,7 +33,7 @@ context是内置接口. 详细见下文: 内置接口-context
   goroutine之间通讯
 - [通道channel-缓存](./语法/17channel缓冲.go)
 - [通道channel-关闭](./语法/18channel关闭与遍历.go)
-- [通道channel-select语法](./语法/19channelSelect.go)
+- [通道channel-`select`语法](./语法/19channelSelect.go)
     - [select案例-斐波那契数列](./语法/20channelSelectFibonacci.go)
 
 ### 内置接口
@@ -45,8 +47,9 @@ context是内置接口. 详细见下文: 内置接口-context
   http://localhost:8081/struct
 - [image接口](./内置接口/14.8内置image.go)
 #### context
-对于一条函数调用链 必须传递上下文
-- 接口介绍, 创建context
+Context是线程安全的; 
+对于一条函数调用链 必须传递context上下文
+- [接口方法;创建context;取消context;传值](./内置接口/context.go)
 
 
 ## 内置包 package
