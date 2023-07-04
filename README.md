@@ -27,13 +27,18 @@
 
   channel有发送（send）、接收(receive）和关闭（close）三种操作。
 - [通道channel- 缓存](./语法/17channel缓冲.go)
-`make(chan 元素类型, [缓冲大小])`
+
+  `make(chan 元素类型, [缓冲大小])`
 - [通道channel- 关闭,`for 循环接收`](./语法/18channel关闭与遍历.go)
-`num, ok := <-ch`
-- [通道channel- `range 循环接收`](./语法/18.1RangeChannel.go)
+
+  接收时判断channel是否关闭:`num, ok := <-ch`
+- [通道channel- `range 自动关闭的循环接收`](./语法/18.1RangeChannel.go)
+
   channel关闭后,range会自动关闭接收
-- [通道channel-`for select` : 多通道读取](./语法/19channelSelect.go)
+- [通道channel-`select 多通道接收`](./语法/19channelSelect.go)
     - [select案例-斐波那契数列](./语法/20channelSelectFibonacci.go)
+
+  for-select 多通道循环接收
 
 #### 上下文 `context 接口`
 context是内置接口. 详细见下文: 内置接口-context
@@ -60,7 +65,7 @@ context是内置接口. 详细见下文: 内置接口-context
   http://localhost:8081/string \
   http://localhost:8081/struct
 - [image接口](./内置接口/14.8内置image.go)
-#### context
+#### context接口
 Context是线程安全的; 
 对于一条函数调用链 必须传递context上下文
 - [接口方法; 创建context; 取消context; 传值](./内置接口/context.go)
@@ -69,13 +74,15 @@ Context是线程安全的;
 ## 内置包 package
 - os包 
   系统的基本操作，如文件操作、目录操作、执行命令、信号与中断、进程、系统状态
-- [runtime包]()
+- [runtime包](./内置包/runtime)
   运行时, cpu调度
-
-- [sync](./内置包/sync)
+  - [限制并发数](./内置包/runtime/MAXPROCS.go)
+  - [让出cpu](./内置包/runtime/sched.go)
+  - [终止当前goroutine](./内置包/runtime/exit.go)
+- [sync包](./内置包/sync)
 - atomic包
 原子操作
-- time 
+- time包 
 时间,日期,定时器
 - math/big 
 大数字精度计算
