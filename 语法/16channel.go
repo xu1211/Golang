@@ -22,6 +22,8 @@ func sum(a []int, c chan int) {
 
 func main() {
 	a := []int{1, 2, 3, 4, 5, 6}
+
+	// 创建channel
 	c := make(chan int)
 
 	go sum(a[:len(a)/2], c) // [1 2 3]

@@ -10,6 +10,7 @@ func fibonacci(n int, c chan int) {
 		c <- x
 		x, y = y, x+y
 	}
+
 	/*
 		channel关闭：
 			只有发送者才能 close 关闭一个 channel 来表示再没有值会被发送了。
@@ -25,19 +26,19 @@ func fibonacci(n int, c chan int) {
 func main() {
 	c := make(chan int, 10)
 	go fibonacci(cap(c), c)
-
 	/*
 		接收者可以通过赋值语句的第二参数来测试 channel 是否被关闭
 		通道接收不到数据后 ok 就为 false
 	*/
-	// v, ok := <-c
-
-	/*
-		channel遍历
-		   range 函数遍历每个从通道接收到的数据，不断从 channel 接收值，直到channel被关闭。
-		   如果channel通道不关闭，那么 range 函数就不会结束，从而在接收第 11 个数据的时候阻塞。
-	*/
-	for i := range c {
-		fmt.Println(i)
+	// 遍历读取channel
+	for {
+		// 通过 num, ok := <-ch 判断channel是否关闭
+		v, ok := <-c
+		if ok {
+			fmt.Println(v)
+		} else if !ok {
+			fmt.Println("通道关闭: ", ok)
+			return
+		}
 	}
 }

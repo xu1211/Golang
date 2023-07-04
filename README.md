@@ -13,7 +13,6 @@
   - 包 package
   - 异常 panic
 
-### todo 反射reflect
 
 ### goroutine 并发处理
 - [并发 `goroutine`](./语法/15并发.go)
@@ -21,20 +20,35 @@
 > 
 > 内存占用: 每个 goroutine只占用4KB。 而线程要8MB; 
 > 同一台机器 Java线程 最多只能建几千个，但是 Go协程 可以建数百万个。
-- 上下文 `context`
-  例: [用context停止子协程](./语法/context.go)
-> 实际是 goroutine 的上下文，包含 goroutine 的运行状态、环境、现场等信息。
-> 
-> 用来在 goroutine之间 传递上下文信息，包括：取消信号、超时时间、截止时间、k-v 等。
-
-context是内置接口. 详细见下文: 内置接口-context
 
 - [通道 `channel`](./语法/16channel.go)
-  goroutine之间通讯
-- [通道channel-缓存](./语法/17channel缓冲.go)
-- [通道channel-关闭](./语法/18channel关闭与遍历.go)
-- [通道channel-`select`语法](./语法/19channelSelect.go)
+
+  功能: goroutine之间通讯
+
+  channel有发送（send）、接收(receive）和关闭（close）三种操作。
+- [通道channel- 缓存](./语法/17channel缓冲.go)
+`make(chan 元素类型, [缓冲大小])`
+- [通道channel- 关闭,`for 循环接收`](./语法/18channel关闭与遍历.go)
+`num, ok := <-ch`
+- [通道channel- `range 循环接收`](./语法/18.1RangeChannel.go)
+  channel关闭后,range会自动关闭接收
+- [通道channel-`for select` : 多通道读取](./语法/19channelSelect.go)
     - [select案例-斐波那契数列](./语法/20channelSelectFibonacci.go)
+
+#### 上下文 `context 接口`
+context是内置接口. 详细见下文: 内置接口-context
+
+  简单案例: [用context停止子协程](./语法/context.go)
+> 实际是 goroutine 的上下文，包含 goroutine 的运行状态、环境、现场等信息。
+>
+> 用来在 goroutine之间 传递上下文信息，包括：取消信号、超时时间、截止时间、k-v 等。
+
+
+#### 同步,锁 `sync 包`
+详细见下文: 内置包-sync包
+#### cpu调度 `runtime 包`
+详细见下文: 内置包-runtime包
+
 
 ### 内置接口
 - [Stringer接口](./内置接口/14.3内置Stringer接口.go)
@@ -49,7 +63,7 @@ context是内置接口. 详细见下文: 内置接口-context
 #### context
 Context是线程安全的; 
 对于一条函数调用链 必须传递context上下文
-- [接口方法;创建context;取消context;传值](./内置接口/context.go)
+- [接口方法; 创建context; 取消context; 传值](./内置接口/context.go)
 
 
 ## 内置包 package
@@ -59,7 +73,8 @@ Context是线程安全的;
   运行时, cpu调度
 
 - [sync](./内置包/sync)
-
+- atomic包
+原子操作
 - time 
 时间,日期,定时器
 - math/big 
@@ -68,6 +83,11 @@ Context是线程安全的;
 正则表达式
 - flag
   解析命令行参数
+
+- reflect包 反射
+
+- unsafe 包
+不安全的指针, 放开了语言对指针的安全限制
 ## 性能分析 pprof
 - [pprof-web页面](./pprof/http.go)
 
@@ -94,3 +114,9 @@ go test -v -bench=. ./test/benchmark_test.go
 go test -v -bench=Alloc -benchmem benchmark_test.go
 
 ```
+
+# 概念类
+## 调度器
+G-M-P 调度模型
+## 内存管理
+## GC 垃圾回收
