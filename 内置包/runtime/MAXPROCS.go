@@ -27,7 +27,7 @@ func b() {
 func main() {
 	// 获取当前系统的 CPU 核心数
 	numCPU := runtime.NumCPU()
-	fmt.Println("当前系统的 CPU 核心数:", numCPU, ",但我要限制只用1个")
+	fmt.Println("当前系统的 CPU 逻辑核心数:", numCPU, ",但我要限制只用1个")
 
 	runtime.GOMAXPROCS(1)
 	go a()

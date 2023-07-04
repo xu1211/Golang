@@ -72,16 +72,21 @@ Context是线程安全的;
 
 
 ## 内置包 package
-- os包 
-  系统的基本操作，如文件操作、目录操作、执行命令、信号与中断、进程、系统状态
+
 - [runtime包](./内置包/runtime)
   运行时, cpu调度
   - [限制并发数](./内置包/runtime/MAXPROCS.go)
   - [让出cpu](./内置包/runtime/sched.go)
   - [终止当前goroutine](./内置包/runtime/exit.go)
+  - runtime.GC()
 - [sync包](./内置包/sync)
+  - [once 单次操作](./内置包/sync/once.go)
+  - [sync.Mutex 互斥锁, sync.RWMutex读写锁](./内置包/sync/mutex.go)
+  - [sync.WaitGroup 同步信号量](./内置包/sync/wait_group.go)
 - atomic包
 原子操作
+- os包
+  系统的基本操作，如文件操作、目录操作、执行命令、信号与中断、进程、系统状态
 - time包 
 时间,日期,定时器
 - math/big 
@@ -122,8 +127,23 @@ go test -v -bench=Alloc -benchmem benchmark_test.go
 
 ```
 
-# 概念类
+# 核心概念
 ## 调度器
-G-M-P 调度模型
+
+- M:N 模型：
+  
+  Go runtime 会负责 goroutine 的生老病死，从创建到销毁，都一手包办。
+  
+  Runtime 会在程序启动的时候，创建 `M 个线程`（CPU 执行调度的单位），
+
+  之后创建的 `N 个 goroutine` 都会依附在这 M 个线程上执行。
+
+- G-M-P 调度模型
+  G: 代表一个 goroutine, 协程
+  M: 取 machine 的首字母，内核线程
+  P: 代表一个虚拟的 Processor, 处理器
+
+m 需要获得 p 才能运行 g。
 ## 内存管理
-## GC 垃圾回收
+Go 运行时的分配算法基于 tcmalloc，基本上没有碎片问题
+- GC 垃圾回收
